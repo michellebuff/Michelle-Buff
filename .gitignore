@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+~$*
+*.tmp
+*.temp
+.env
+.env.*
+__pycache__/
+*.pyc
