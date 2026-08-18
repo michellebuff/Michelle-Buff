@@ -4,4 +4,4 @@ Michelle Buff is a retired U.S. Army veteran with more than 20 years of experien
 
 ## Engagement Index 
 
--Perfect Competition - Decision Analysis *(In Progress)*
+- Perfect Competition - Decision Analysis *(In Progress)*
