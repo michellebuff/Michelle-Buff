@@ -1,9 +1,25 @@
+# macOS and Windows operating-system metadata files
 .DS_Store
 Thumbs.db
+Desktop.ini
+
+# Microsoft Office lock, temporary, and recovery files
 ~$*
 *.tmp
 *.temp
+
+# Editor backup and swap files
+*~
+*.bak
+*.swp
+*.swo
+
+# Environment files and files that may contain credentials
 .env
 .env.*
+*.key
+*.pem
+
+# Python cache files that are not project deliverables
 __pycache__/
 *.pyc
