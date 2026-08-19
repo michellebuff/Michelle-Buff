@@ -20,6 +20,10 @@ Desktop.ini
 *.key
 *.pem
 
+# Folders reserved for private, sensitive, licensed, or credential material
+secrets/
+private/
+
 # Python cache files that are not project deliverables
 __pycache__/
 *.pyc
