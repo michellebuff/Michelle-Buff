@@ -63,7 +63,7 @@ This repository is public.
 - Never include classified, controlled, proprietary, personally sensitive, licensed, credential, or employer-restricted information.
 - Never commit passwords, API keys, authentication tokens, `.env` files, or similar credentials.
 - Use descriptive commit messages that explain what changed.
-- Do not make significant repository changes without allowing me to review the content first.
+- Do not make significant repository changes without allowing me to review the content first. For routine edits, review means: summarize the change (or show the diff) in chat, and merge into `main` once I confirm — I do not need to open GitHub myself to pull, commit, or merge.
 - Preserve a clear history of meaningful work rather than hiding or collapsing the development process.
 - After performing GitHub work for me, explain what changed so I continue learning the workflow.
 
