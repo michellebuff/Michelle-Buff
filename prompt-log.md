@@ -84,3 +84,19 @@ I specifically required AI to explain unfamiliar topics in plain language, show 
 
 **Working principle:**  
 **Specify → Review → Challenge → Verify → Decide**
+
+## 2026-08-23 — Stage 1 Hypothesis Stress-Test
+
+**AI tool:** Claude (Anthropic)
+
+**Task:**  
+Before committing the Stage 1 engagement brief for the Perfect Competition case, asked Claude to attack my planting-mix hypothesis (14 tomato beds, 20 carrot beds, 30 mesclun beds) — name implicit assumptions, unsupported claims, and check whether the hypothesis was falsifiable, without rewriting it.
+
+**AI contribution:**  
+Claude pointed out that my tomato bed count (14) was actually a leftover from maxing out carrot and mesclun beds first, rather than a number derived from tomatoes' own marginal cost against its own price. It also flagged that I hadn't stated, as an assumption, that carrot and mesclun marginal costs stay below their respective prices all the way out to their bed caps — and pushed me to tie each number to a specific economic mechanism instead of a general "feels safer/cheaper" argument.
+
+**My verification / what I did with it:**  
+Yes, I kept my "leftover" tomato logic as my stated hypothesis. I expect the marginal costs of carrots and mesclun to stay below their respective prices until they reach their caps, and I believe tomatoes' much higher selling price will outweigh their steeper labor penalty for the remaining 14 beds. I understand that the model may prove those assumptions wrong, but I think it is still a fair prediction to commit to before doing the analysis.
+
+**What I learned:**  
+I learned that marginal analysis adds specificity to a decision because it looks at whether each additional unit is still worth producing. A number can sound reasonable, like using the 14 leftover beds for tomatoes, without actually showing that the 14th tomato bed is profitable. Marginal analysis forces me to compare the benefit of each additional bed to its added cost instead of relying only on what seems reasonable.
