@@ -1,4 +1,4 @@
-# Professional Bio
+# Professional Bio 2
 
 Michelle Buff is a retired U.S. Army veteran with more than 20 years of experience in leadership, operations, training, and organizational planning. Throughout her career, she has worked in environments that required coordinating people, resources, and competing priorities while making decisions under pressure. She currently works in exercise planning and operational integration supporting the Joint Pacific Multinational Readiness Center (JPMRC) and U.S. Army Pacific (USARPAC) activities across the Indo-Pacific region.
 
