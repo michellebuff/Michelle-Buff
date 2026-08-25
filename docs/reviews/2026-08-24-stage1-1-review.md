@@ -6,7 +6,7 @@
 | Criterion | Earned | Notes |
 |---|---|---|
 | Problem restated in your own voice | 27 / 30 | Compact and accurate. You draw the line between what the farm cannot control (prices, the production characteristics) and what it can (how many beds of each crop), and you list the four things that limit the choice. It is short, but nothing in it is filler. |
-| Hypothesis names a specific mix | 25 / 25 | Carrots 20, mesclun 30, tomatoes 14, laid out as three lines with a reason attached to each. Easy to check, easy to be wrong about — which is the point. |
+| Hypothesis names a specific mix | 25 / 25 | You name carrots 20, mesclun 30, tomatoes 14, laid out as three lines with a reason attached to each. Easy to check, easy to be wrong about — which is the point. |
 | Economic mechanism | 24 / 25 | Two sentences that do a lot of work: "Carrot and mesclun marginal costs stay below their respective prices until their caps" and "Tomato's high selling price outweighs its steeper labor penalty through approximately 14 beds." That is the P = MC rule applied per crop, with the cap-versus-economics distinction implied correctly. What keeps it from full marks is that the tomato number is asserted rather than reasoned — you say roughly 14 without saying what about the 10% rate puts the crossing near 14 rather than near 8 or 18. |
 | Falsifiability and process | 14 / 20 | The mix is precise enough to be refuted, but there is no section naming what would count as refutation. The brief is also on the short side at 146 words against the stage's "half a page to a page." Brief committed 2026-08-23 at 09:56; your spec started at 10:16. Correct order, correct path — twenty minutes is thin, but it is the right way round. |
 | **Final** | **90 / 100** | earned on merit |
