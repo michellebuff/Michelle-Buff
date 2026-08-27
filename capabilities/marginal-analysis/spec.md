@@ -91,7 +91,9 @@ Labor cost:
 
 For the crop P&L, labor should be allocated using the blended farm labor rate:
 
-`BLENDED_LABOR_RATE = TOTAL_LABOR_COST / TOTAL_LABOR_HRS`
+`BLENDED_LABOR_RATE = IF(TOTAL_LABOR_HRS = 0, 0, TOTAL_LABOR_COST / TOTAL_LABOR_HRS)`
+
+The zero-hours guard is required, not optional. Solver must be run from a `0 / 0 / 0` starting point as part of the audit, and an unguarded division would return `#DIV/0!` at that point — which would fail the structural check prohibiting error values.
 
 ### Revenue and fertilizer
 
@@ -114,6 +116,8 @@ Total revenue and fertilizer costs are the sums across all three crops.
 ### Marginal cost
 
 Create a standalone marginal-cost schedule for each crop from zero beds through that crop's maximum number of beds.
+
+Each crop's standalone schedule is evaluated independently, with the other two crop quantities set to zero. A standalone schedule therefore shows what that crop's marginal cost would be if it were the only crop planted that season, and it is not affected by the bed counts Solver selects for the other two crops.
 
 For each additional bed:
 
@@ -221,6 +225,7 @@ The workbook must clearly report:
 - farmer labor hours used;
 - temporary labor hours used;
 - temporary workers required;
+- blended labor rate;
 - total labor cost;
 - total fertilizer cost;
 - total variable cost;
