@@ -101,7 +101,7 @@ Yes, I kept my "leftover" tomato logic as my stated hypothesis. I expect the mar
 **What I learned:**  
 I learned that marginal analysis adds specificity to a decision because it looks at whether each additional unit is still worth producing. A number can sound reasonable, like using the 14 leftover beds for tomatoes, without actually showing that the 14th tomato bed is profitable. Marginal analysis forces me to compare the benefit of each additional bed to its added cost instead of relying only on what seems reasonable.
 
-## 2026-08-27 — Stage 2 Specification Review
+## 2026-08-26 — Stage 2 Specification Review
 
 **AI tool:** Claude (Anthropic)
 
@@ -109,15 +109,15 @@ I learned that marginal analysis adds specificity to a decision because it looks
 Before any workbook was built, asked Claude to review my Stage 2 model specification for ambiguity, implementation risk, and any place where a model builder would have to guess rather than follow the spec.
 
 **AI contribution:**  
-Claude identified four issues, which I reviewed and approved as corrections to the spec:
+Claude reviewed and implemented four issues I brought forward for verification and correction:
 
 - **Division-by-zero risk at zero beds.** `BLENDED_LABOR_RATE = TOTAL_LABOR_COST / TOTAL_LABOR_HRS` would return `#DIV/0!` when all three bed counts are zero. Because the audit requires running Solver from a `0 / 0 / 0` starting point, this would have failed my own structural check prohibiting error values. The formula now reads `IF(TOTAL_LABOR_HRS = 0, 0, TOTAL_LABOR_COST / TOTAL_LABOR_HRS)`.
 - **Ambiguous "standalone" marginal-cost schedules.** The spec did not state what the other two crops were doing while one crop's schedule was being calculated. It now states explicitly that each standalone schedule holds the other two crop quantities at zero.
 - **Blended labor rate not reported.** It was calculated but never surfaced as an output, making it hard to audit. It was added to the Outputs section.
-- **Sequence risk.** Claude flagged that building `model.xlsx` before the spec was committed would show the workbook predating its own specification in the Git history, inverting the order Stage 2 grades.
+- **Sequence risk.** Building `model.xlsx` before the spec was committed would show the workbook predating its own specification in the Git history, inverting the order Stage 2 grades. The spec-first sequence was preserved.
 
 **My verification / decisions:**  
 I read and reviewed the specification myself before approving any changes. I questioned the frontmatter date and decided to keep `2026-08-23`, because that is the date I originally began writing the spec and it accurately reflects when the work started. I questioned the divergence between the Claude working branch and `main`, and decided that only the corrected spec commits should be moved onto current `main` rather than merging the stale branch, so that no existing `main` history — including my earlier `BIO.md` revert — would be disturbed. I approved each technical clarification individually, and I withheld authorization to build the workbook until the corrected spec was committed to `main`.
 
 **What I learned:**  
-*(to be written by Michelle)*
+A strong specification should remove ambiguity before a model is built. Small details—such as handling a zero-value case or defining what "standalone" means—can create major errors later if they are left for the builder to interpret.
