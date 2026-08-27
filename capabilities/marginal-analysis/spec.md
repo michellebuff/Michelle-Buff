@@ -23,10 +23,10 @@ The model must show how marginal cost changes as additional beds of each crop ar
 | `FIXED_COSTS` | 20000 | USD/season | Case scenario |
 | `MAX_TOTAL_BEDS` | 64 | beds | Case scenario |
 | `FARMER_FIELD_HOURS` | 720 | hours/season | Case scenario |
-| `FARMER_FIELD_RATE` | 34.72 | USD/hour | Case scenario |
+| `FARMER_FIELD_RATE` | 50000 / 1440 | USD/hour | Derived from farmer salary and paid hours |
 | `MAX_TEMP_WORKERS` | 4 | workers | Case scenario |
 | `TEMP_HOURS_PER_WORKER` | 1440 | hours/season | Case scenario |
-| `TEMP_RATE` | 17.36 | USD/hour | Case scenario |
+| `TEMP_RATE` | 25000 / 1440 | USD/hour | Derived from temporary worker salary and paid hours |
 | `TOM_MAX_BEDS` | 20 | beds | Case scenario |
 | `TOM_PRICE` | 8800 | USD/bed | Case scenario |
 | `TOM_HRS` | 2.50 | hours/week/bed | Case scenario |
@@ -34,7 +34,7 @@ The model must show how marginal cost changes as additional beds of each crop ar
 | `TOM_DIM` | 0.10 | decimal (10.0% per bed) | Case scenario |
 | `CAR_MAX_BEDS` | 20 | beds | Case scenario |
 | `CAR_PRICE` | 2094 | USD/bed | Case scenario |
-| `CAR_HRS` | 0.833 | hours/week/bed | Case scenario |
+| `CAR_HRS` | 2.50 / 3 | hours/week/bed | Case scenario — defined as tomato labor / 3 |
 | `CAR_FERT` | 440 | USD/bed | Case scenario |
 | `CAR_DIM` | 0.025 | decimal (2.5% per bed) | Case scenario |
 | `MES_MAX_BEDS` | 30 | beds | Case scenario |
@@ -43,11 +43,12 @@ The model must show how marginal cost changes as additional beds of each crop ar
 | `MES_FERT` | 880 | USD/bed | Case scenario |
 | `MES_DIM` | 0.0125 | decimal (1.25% per bed) | Case scenario |
 
+Derived values must be calculated from the underlying source values at full precision and must not be replaced with rounded hard-coded values.
 Diminishing-return inputs are stored as decimals so that `(1 + DIM_PCT)^q` can reference the named range directly without a unit conversion step.
 
 ## Structure
 
-The workbook should contain clearly labeled sheets or regions for:
+The workbook must contain five separate worksheets named exactly:
 
 1. **Inputs** — all named assumptions from the case.
 2. **Farm P&L** — crop quantities, revenue, labor, fertilizer, fixed costs, total costs, and profit.
