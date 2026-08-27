@@ -1,1 +1,2 @@
 Marginal-analysis capability for the Perfect Competition case: a constrained-optimization model that finds the profit-maximizing mix of tomato, carrot, and mesclun beds. See `spec.md` for the model specification.
+exercised in: Perfect Competition case
