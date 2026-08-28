@@ -23,10 +23,13 @@ The model must show how marginal cost changes as additional beds of each crop ar
 | `FIXED_COSTS` | 20000 | USD/season | Case scenario |
 | `MAX_TOTAL_BEDS` | 64 | beds | Case scenario |
 | `FARMER_FIELD_HOURS` | 720 | hours/season | Case scenario |
-| `FARMER_FIELD_RATE` | 50000 / 1440 | USD/hour | Derived from farmer salary and paid hours |
+| `FARMER_SALARY` | 50000 | USD/season | Case scenario |
+| `FARMER_PAID_HOURS` | 40 × `SEASON_WEEKS` | hours/season | Derived from 40 paid hours/week × 36 weeks |
+| `FARMER_FIELD_RATE` | `FARMER_SALARY` / `FARMER_PAID_HOURS` | USD/hour | Derived |
 | `MAX_TEMP_WORKERS` | 4 | workers | Case scenario |
 | `TEMP_HOURS_PER_WORKER` | 1440 | hours/season | Case scenario |
-| `TEMP_RATE` | 25000 / 1440 | USD/hour | Derived from temporary worker salary and paid hours |
+| `TEMP_SALARY` | 25000 | USD/season | Case scenario |
+| `TEMP_RATE` | `TEMP_SALARY` / `TEMP_HOURS_PER_WORKER` | USD/hour | Derived ||
 | `TOM_MAX_BEDS` | 20 | beds | Case scenario |
 | `TOM_PRICE` | 8800 | USD/bed | Case scenario |
 | `TOM_HRS` | 2.50 | hours/week/bed | Case scenario |
@@ -50,11 +53,11 @@ Diminishing-return inputs are stored as decimals so that `(1 + DIM_PCT)^q` can r
 
 The workbook must contain five separate worksheets named exactly:
 
-1. **Inputs** — all named assumptions from the case.
-2. **Farm P&L** — crop quantities, revenue, labor, fertilizer, fixed costs, total costs, and profit.
-3. **Marginal Analysis** — standalone marginal-cost schedules for tomatoes, carrots, and mesclun.
-4. **Optimization** — the three crop bed-count decision variables, Solver objective, and all constraints.
-5. **Checks** — validation results and pass/fail checks for the finished model.
+1. **Inputs** — all named assumptions from the case, including given and derived values with units and sources.
+2. **Farm P&L** — crop quantities, revenue, labor, fertilizer, fixed costs, total costs, and profit, with the main operating results shown together.
+3. **Marginal Analysis** — standalone marginal-cost schedules for tomatoes, carrots, and mesclun, including market price comparisons and the reported P ≈ MC crossing for each crop.
+4. **Optimization** — the three crop bed-count decision cells, Solver objective, and visible land, crop-cap, and labor constraint checks.
+5. **Checks** — acceptance criteria, hand-checks, Solver starting-point results, structural checks, and pass/fail validation results.
 
 ## Calculation Logic
 
@@ -126,6 +129,8 @@ For each additional bed:
 
 Marginal cost should be compared with that crop's fixed market price.
 
+If marginal cost crosses the market price more than once because the marginal-cost curve is non-monotonic, the reported standalone P ≈ MC crossing should use the first crossing as quantity increases from zero beds.
+
 Do not force marginal cost to increase with every bed. The labor and wage formulas should determine the actual shape of the marginal-cost curve.
 
 ## Conventions
@@ -176,6 +181,12 @@ At `q = 1`, one tomato bed must require:
 
 If the workbook does not return 99 hours, the labor calculation fails validation.
 
+At `q = 10`, ten tomato beds must require:
+
+`10 × 2.5 × 36 × 1.10^10 = 2,334.4 hours`
+
+This second check verifies that the 10% diminishing-return factor is compounded across the full crop quantity rather than applied only once.
+
 ### Farm Profit Lab cross-check
 
 At least one intermediate marginal-cost value from the workbook must be independently compared with the Farm Profit Lab.
@@ -193,14 +204,16 @@ The results must be compared to determine whether Solver is reaching the same op
 
 Source: Stage 2 page published check figures.
 
-| Check | Expected Result |
-|---|---|
-| Optimal crop mix | 10 tomato, 20 carrot, 30 mesclun |
-| Total beds planted | 60 |
-| Season profit | approximately $42,762 |
-| Standalone Tomato P ≈ MC | approximately 10 beds |
-| Standalone Carrot P ≈ MC | approximately 10 beds |
-| Standalone Mesclun P ≈ MC | approximately 6 beds |
+| Check | Expected Result | Tolerance |
+|---|---|---|
+| Optimal crop mix | 10 tomato, 20 carrot, 30 mesclun | Exact |
+| Total beds planted | 60 | Exact |
+| Total labor hours | 5,277.2 hours | Within 0.01 hour |
+| Temporary workers required | 3.165 workers | Within 0.01 worker |
+| Season profit | $42,762 | Within $1 |
+| Standalone Tomato P ≈ MC | 10 beds | Within 1 bed |
+| Standalone Carrot P ≈ MC | 10 beds | Within 1 bed |
+| Standalone Mesclun P ≈ MC | 6 beds | Within 1 bed |
 
 These values are acceptance tests. They must not be hard-coded into calculated result cells or used to force Solver to produce the expected answer.
 
@@ -212,6 +225,7 @@ These values are acceptance tests. They must not be hard-coded into calculated r
 - All land, crop-cap, and labor constraint checks must pass.
 - The tomato marginal-cost dip around six beds should be visible and noted for later analysis, but it should not be artificially created or explained in the model.
 
+If any validation check fails because the specification is incomplete or ambiguous, the specification must be corrected and committed before the workbook is regenerated. The workbook must not be manually patched to force a passing result.
 ## Outputs
 
 The workbook must clearly report:
