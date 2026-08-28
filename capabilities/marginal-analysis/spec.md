@@ -29,7 +29,7 @@ The model must show how marginal cost changes as additional beds of each crop ar
 | `MAX_TEMP_WORKERS` | 4 | workers | Case scenario |
 | `TEMP_HOURS_PER_WORKER` | 1440 | hours/season | Case scenario |
 | `TEMP_SALARY` | 25000 | USD/season | Case scenario |
-| `TEMP_RATE` | `TEMP_SALARY` / `TEMP_HOURS_PER_WORKER` | USD/hour | Derived ||
+| `TEMP_RATE` | `TEMP_SALARY` / `TEMP_HOURS_PER_WORKER` | USD/hour | Derived |
 | `TOM_MAX_BEDS` | 20 | beds | Case scenario |
 | `TOM_PRICE` | 8800 | USD/bed | Case scenario |
 | `TOM_HRS` | 2.50 | hours/week/bed | Case scenario |
@@ -129,7 +129,7 @@ For each additional bed:
 
 Marginal cost should be compared with that crop's fixed market price.
 
-If marginal cost crosses the market price more than once because the marginal-cost curve is non-monotonic, the reported standalone P ≈ MC crossing should use the first crossing as quantity increases from zero beds.
+If marginal cost crosses the market price more than once because the marginal-cost curve is non-monotonic, the reported standalone P ≈ MC crossing is the last whole-number bed at which marginal cost is less than or equal to the market price before marginal cost first exceeds the market price, scanning upward from zero beds.
 
 Do not force marginal cost to increase with every bed. The labor and wage formulas should determine the actual shape of the marginal-cost curve.
 
@@ -183,7 +183,7 @@ If the workbook does not return 99 hours, the labor calculation fails validation
 
 At `q = 10`, ten tomato beds must require:
 
-`10 × 2.5 × 36 × 1.10^10 = 2,334.4 hours`
+`10 × 2.5 × 36 × 1.10^10 = 2,334.37 hours` (within 0.01 hour)
 
 This second check verifies that the 10% diminishing-return factor is compounded across the full crop quantity rather than applied only once.
 
@@ -208,8 +208,8 @@ Source: Stage 2 page published check figures.
 |---|---|---|
 | Optimal crop mix | 10 tomato, 20 carrot, 30 mesclun | Exact |
 | Total beds planted | 60 | Exact |
-| Total labor hours | 5,277.2 hours | Within 0.01 hour |
-| Temporary workers required | 3.165 workers | Within 0.01 worker |
+| Total labor hours at the optimal mix | 5,277.22 hours | Within 0.01 hour |
+| Temporary workers required at the optimal mix | 3.165 workers | Within 0.01 worker |
 | Season profit | $42,762 | Within $1 |
 | Standalone Tomato P ≈ MC | 10 beds | Within 1 bed |
 | Standalone Carrot P ≈ MC | 10 beds | Within 1 bed |
@@ -226,6 +226,7 @@ These values are acceptance tests. They must not be hard-coded into calculated r
 - The tomato marginal-cost dip around six beds should be visible and noted for later analysis, but it should not be artificially created or explained in the model.
 
 If any validation check fails because the specification is incomplete or ambiguous, the specification must be corrected and committed before the workbook is regenerated. The workbook must not be manually patched to force a passing result.
+
 ## Outputs
 
 The workbook must clearly report:
