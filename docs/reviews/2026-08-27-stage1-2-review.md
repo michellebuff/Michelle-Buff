@@ -1,55 +1,45 @@
 <!-- PR TARGET: https://github.com/michellebuff/Michelle-Buff | Stage 1.2 (8 pts) -->
 # Stage 1.2 review — spec, build, audit
 
-**Held — not entered. Spec-side: 57 of the 62.5 points available before a workbook exists.**
+**Spec-side 61 out of 62.5 — held, not entered. The workbook is not due until 6 September and none was expected yet.**
 
 **Spec:** [`capabilities/marginal-analysis/spec.md`](https://github.com/michellebuff/Michelle-Buff/blob/main/capabilities/marginal-analysis/spec.md)
 
-> Graded early, at the instructor's request. Stage 1.2 is not due until 6 September and nothing was required yet. You have a specification and no workbook, which is exactly the right state to be in at this point — the stage is deliberately sequenced spec first. I am not entering a score, because 37.5 of the 100 points on this stage are for a workbook that does not exist yet and a number computed against those would say something false about the work. What follows is where the spec-side points stand and what to fix before you build.
+> Re-graded 2026-08-31. Your previous spec-side result was 57 of 62.5. You closed both gaps I named and the validation section is now full marks — it is one of the two best in the cohort and it caught something before I could tell you about it.
 
 | Criterion | Earned | Notes |
 |---|---|---|
-| Spec completeness — inputs, structure, calculation flow | 35 / 37.5 | This is a genuinely good specification and it gets three things right that have already cost other people real money in this cohort. First, your inputs table stores relationships rather than results: FARMER_FIELD_RATE is "50000 / 1440" and CAR_HRS is "2.50 / 3", not $34.72 and 0.833. The instruction underneath — "Derived values must be calculated from the underlying source values at full precision and must not be replaced with rounded hard-coded values" — is the single sentence that separates a workbook that reconciles from one that is a few dollars off for reasons nobody can find. Second, your labor function is right: q x HRS_PER_BED x SEASON_WEEKS x (1 + DIM_PCT)^q, with "labor must not be modeled as a simple linear function" stated explicitly. Third, and this is the one I would not have expected, you specified that the standalone marginal-cost schedules must be independent of the mix — "evaluated independently, with the other two crop quantities set to zero... not affected by the bed counts Solver selects." Two and a half points off for a small omission: TEMP_HOURS_PER_WORKER is 1,440 and FARMER_FIELD_RATE divides by 1,440 as well, and the second 1,440 is the farmer's total paid hours — a different quantity that happens to share a value. Sourcing it as "Derived from farmer salary and paid hours" is right, but the number itself is your derivation from 40 hours a week over 36 weeks, and the input table is the one place where derived and given should be visibly different. |
-| Spec validation rules | 22 / 25 | Written before the build, which is what makes them tests rather than explanations. The published check figures are in as acceptance criteria — the mix, 60 beds, the profit, and all three standalone crossings — and you added the sentence that makes them safe: "They must not be hard-coded into calculated result cells or used to force Solver to produce the expected answer." That is the failure mode that nearly got past the strongest submission in this cohort, caught in advance. Two Solver starting points, the q = 1 hand check at 99 hours, structural checks on formulas and error cells, and the instruction not to force marginal cost to rise are all present. Three points off for two gaps. There is no tolerance on any figure — "approximately $42,762" cannot pass or fail, and $42,761.66 and $42,700 both satisfy it. Give each check a band: dollars to $1, hours to 0.01, quantities exact. And your only hand check is tomatoes at q = 1, which a wrong model can still pass; see the note below. |
-| Workbook satisfies the contract | 0 / 25 | No workbook yet, and none was due. Nothing is lost here — this is simply the part of the stage you have not reached. |
-| Audit note | 0 / 12.5 | The section exists with the right four questions — what was checked, what it was intended to catch, what was found, what was done about it — and it is empty, correctly, because there is nothing to audit yet. Writing the audit template before the build is the right order. |
-| **Spec-side subtotal** | **57 / 62.5** | the part that can be earned before a workbook exists |
+| Spec completeness — inputs, structure, calculation flow | 36 / 37.5 | Up from 35. The derived-input rule is now explicit and enforced — FARMER_PAID_HOURS as 40 x SEASON_WEEKS, FARMER_FIELD_RATE from salary over paid hours, TEMP_RATE from salary over hours, and carrot labor as 2.50 / 3 rather than the displayed 0.833 — with the rule stated underneath that derived values must never be replaced with rounded hard-coded ones. A workbook in this cohort has that exact defect live right now and its profit is $13 off because of it. The non-monotonic crossing rule is new and correctly stated as an upward scan to the first crossing. The zero-hours guard on the blended rate is the detail I want to point at: you required it, and you wrote down why — Solver must run from 0/0/0 as part of the audit, an unguarded division returns #DIV/0! at that point, and that would fail your own structural check. A rule with its reason attached survives a builder who thinks it is unnecessary. The remaining point and a half is that TEMP_WORKERS_NEEDED has no rounding rule stated — you clearly intend fractional, since your acceptance figure is 3.165 workers, but a builder could reasonably read the constraint as a headcount and round up. |
+| Spec validation rules | 25 / 25 | Full marks, up from 22, and every one of the three gaps I named is closed. Every acceptance figure now carries a tolerance. The Solver two-starting-point procedure is specified. And the labor anchor at q = 10 is in, with the reason written into the spec rather than left implicit: "This second check verifies that the 10% diminishing-return factor is compounded across the full crop quantity rather than applied only once." That is exactly right, and it is the check that catches the one defect a q = 1 anchor cannot see. |
+| Workbook satisfies the contract | 0 / 25 | No workbook yet, and none was due. Nothing is lost here — this is what the stage expects at this point, and writing the specification first is the entire method. |
+| Audit note | 0 / 12.5 | Correctly a stub, and the stub already names the four questions each finding must answer: what was checked, what the check was intended to catch, what was found, and what action was taken. The second of those is the one most people leave out and it is the one that makes a finding evidence rather than a note. |
+| **Spec-side subtotal** | **61 / 62.5** | the part that can be earned before a workbook exists |
 
-> Where this leaves you: 57 of 62.5 on the two spec criteria. The remaining 37.5 — 25 for a workbook that satisfies the contract and 12.5 for the audit note — become available once model.xlsx exists and you have audited it.
+### The rule that matters most in your spec
 
-### The one thing I'd add before you build
+"If any validation check fails because the specification is incomplete or ambiguous, the specification must be corrected and committed before the workbook is regenerated. The workbook must not be manually patched to force a passing result."
 
-Your q = 1 hand check asks for 99 hours from 1 x 2.50 x 36 x 1.10. It is a good check and it will not catch the most likely error in this model.
+That is the whole discipline of this stage in two sentences, and you are the only person who wrote it down as a rule rather than following it implicitly. The reason it matters: a workbook patched by hand still passes its checks, and the spec beside it now describes a model that does not exist. Six months later the spec is the only documentation and it is wrong.
 
-Here is why. Suppose a builder writes the labor function as base x 36 x (1 + rate) and sums down the column, applying the penalty to the marginal bed rather than to the whole crop. At q = 1 that returns exactly 99 hours and your check passes. At q = 10 it returns 990 hours where the correct function returns 2,334. The model is then wrong by more than a thousand hours on one crop and every downstream number is wrong with it, and nothing in your Checks sheet goes red.
+Hold yourself to it when the first check fails, because that is when it will feel expensive.
 
-This is not hypothetical. It is the defect in one of the two completed workbooks in this cohort, and that workbook's Solver returns a loss where the case returns a $42,762 profit.
+### The MC dip
 
-The fix is one row: add a second anchor at q = 10. Tomato labor at 10 beds must be 10 x 2.50 x 36 x 1.10^10 = 2,334.4 hours. A model that gets the exponent wrong fails that immediately. One check that can only pass is worth less than two that can disagree.
+Your structural checks include "The tomato marginal-cost dip around six beds should be visible and noted for later analysis, but it should not be artificially created or explained in the model." Both halves of that are right and the second half is the subtle one.
 
-### What else is worth tightening
+A model that expects a dip can be nudged into producing one. Requiring the dip to be visible and explicitly forbidding yourself from explaining it in Stage 2 is how you keep the observation independent of the interpretation. Stage 3 is where the explanation goes.
 
-- Put tolerances on every acceptance figure. "Approximately" is not a test. Profit within $1, hours to two decimals, bed counts exact, crossings within one bed. The reason this matters more than it sounds: without a band, a result that is close gets accepted by judgment, and the judgment is made by the person who wants it to pass.
+### What to do next
 
-- Add the labor figures to the acceptance table. The case publishes about 5,277 total labor hours and roughly 3.16 temporary workers at the optimum. Those two catch a whole class of error that the profit figure alone can hide, because profit is a difference of large numbers and two offsetting mistakes can land on it.
+Build it. The specification is ready and there is nothing left to decide in it.
 
-- Say what happens when a check fails. The rule that makes this stage work is: correct the spec and regenerate, do not patch the workbook by hand. Write that down. Otherwise the first failure gets fixed in the sheet, the spec quietly stops describing what exists, and the document you are graded on becomes fiction.
+One sequencing suggestion: build the standalone marginal-cost schedules before the optimization. They are the part your Stage 1.1 brief is a prediction about, they do not depend on Solver, and if they are wrong every downstream number is wrong in a way that is hard to see. The q = 1 and q = 10 anchors both live in that block, so you can validate the engine before anything else is built on top of it.
 
-- Your Structure section names five sheets but not what a reader would see on each. Adding one line per sheet about layout — where the decision cells are, where the constraint flags live — costs you nothing and is the difference between a spec someone can build from and a spec someone has to interpret.
+Then Solver from both starting points, then the Farm Profit Lab cross-check on one intermediate value, then the audit. Your spec already says to correct the spec rather than the workbook when something fails — that is the sentence to reread at that point.
 
-### Why the zero-hours guard is the best line in this spec
+### One organizational note
 
-You wrote: BLENDED_LABOR_RATE = IF(TOTAL_LABOR_HRS = 0, 0, TOTAL_LABOR_COST / TOTAL_LABOR_HRS), and then "The zero-hours guard is required, not optional. Solver must be run from a 0 / 0 / 0 starting point as part of the audit, and an unguarded division would return #DIV/0! at that point — which would fail the structural check prohibiting error values."
-
-That is three separate requirements reasoned into agreement with each other: the Solver protocol, the formula, and the acceptance criterion. You noticed that one of your own rules would break another one and you resolved it in the spec rather than discovering it mid-build. Most defects in models are exactly this shape — two reasonable requirements that quietly conflict — and they are almost always found the expensive way.
-
-Keep doing that pass. Read your own spec asking "which of these rules fight each other," and write down what you find. It is worth more than any amount of additional detail.
-
-### What happens next
-
-Fix the two anchors and the tolerances first, then build. The order matters: a check figure added after a disappointing result is not a check, it is a negotiation.
-
-When you audit the workbook, record at least three checks in the Audit Findings section, each naming what it would have caught, plus any defects you found and how you fixed them. That section is 12.5 of the 100 points and it is the one most people leave empty, because by the time the model works nobody wants to write down what was wrong with it.
+Your spec frontmatter still reads status: draft and date: 2026-08-23, and the document has moved substantially since then. Update both when you commit the version you build from — the date on a spec is a claim about when its decisions were made, and yours were made later and better.
 
 ---
 
