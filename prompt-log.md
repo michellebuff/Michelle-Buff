@@ -159,7 +159,7 @@ Reviewed Professor Stauffer's updated Stage 1.2 feedback, compared it against my
 ChatGPT helped me interpret the review, distinguish between feedback that required a model change and feedback that only required documentation clarification, and refine my response to the professor. Claude made the final documentation-only updates to `spec.md` after I approved them.
 
 **My verification / decisions:**  
-I reviewed the professor's comments myself before making changes. I kept the completed workbook unchanged because the remaining issues did not affect the model logic. I updated the specification status and date, clarified that `TEMP_WORKERS_NEEDED` represents a fractional full-time-equivalent requirement rather than a rounded headcount, and documented the tomato marginal-cost dip for Stage 3 without explaining it prematurely.
+I reviewed the professor's comments myself before making changes. I kept the completed workbook unchanged because the remaining issues did not affect the model logic. I updated the specification status and date, clarified that `TEMP_WORKERS_NEEDED` represents a fractional full-time-equivalent requirement rather than a rounded headcount. The TEMP_WORKERS_NEEDED clarification documented the fractional-FTE behavior already present in the audited workbook, so no workbook regeneration was required. Finally I documented the tomato marginal-cost dip for Stage 3 without explaining it prematurely.
 
 I also responded to the review by documenting what I changed, where I made a different analytical decision, and what the audit caught. The final workbook remained consistent with the specification and all previously completed validation and Solver checks.
 
