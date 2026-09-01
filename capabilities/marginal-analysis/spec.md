@@ -224,6 +224,7 @@ These values are acceptance tests. They must not be hard-coded into calculated r
 - There must be no `#REF!`, `#DIV/0!`, or `#NAME?` errors.
 - All land, crop-cap, and labor constraint checks must pass.
 - The tomato marginal-cost dip around six beds should be visible and noted for later analysis, but it should not be artificially created or explained in the model.
+- All constraint-check status cells must use conditional formatting so passing/OK results display green and failing/non-OK results display red.
 
 If any validation check fails because the specification is incomplete or ambiguous, the specification must be corrected and committed before the workbook is regenerated. The workbook must not be manually patched to force a passing result.
 
