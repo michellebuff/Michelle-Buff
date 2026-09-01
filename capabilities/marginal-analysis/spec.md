@@ -2,8 +2,8 @@
 type: spec
 capability: marginal-analysis
 engagement: perfect-competition
-date: 2026-08-23
-status: draft
+date: 2026-08-31
+status: complete
 built_with: "Claude Code, from this file"
 ---
 
@@ -84,6 +84,8 @@ Temporary labor covers the remaining requirement:
 Temporary workers required:
 
 `TEMP_WORKERS_NEEDED = TEMP_LABOR_HRS / TEMP_HOURS_PER_WORKER`
+
+`TEMP_WORKERS_NEEDED` is a fractional full-time-equivalent worker requirement, not a headcount. It must not be rounded up to a whole number, and the Solver constraint is applied to the fractional value.
 
 Labor cost:
 
@@ -289,5 +291,5 @@ The workbook must clearly report:
 
 - **Checked:** Calculated cells, named-input references, error checks, constraints, and visible constraint-status formatting.
 - **Intended to catch:** Pasted values, broken formulas, spreadsheet errors, or failed constraints.
-- **Found:** Calculated cells remained formula-driven, no REF/DIV0/NAME errors were present, all acceptance and structural checks passed, and all constraint statuses displayed green after regeneration.
+- **Found:** Calculated cells remained formula-driven, no REF/DIV0/NAME errors were present, all acceptance and structural checks passed, and all constraint statuses displayed green after regeneration. The tomato marginal-cost dip around six beds was visible in the workbook and was noted for Stage 3 analysis without being explained at this stage.
 - **Action:** The specification was updated to require visible green/red constraint-status formatting and the workbook was regenerated from the revised specification. 
