@@ -41,6 +41,14 @@ Then Solver from both starting points, then the Farm Profit Lab cross-check on o
 
 Your spec frontmatter still reads status: draft and date: 2026-08-23, and the document has moved substantially since then. Update both when you commit the version you build from — the date on a spec is a claim about when its decisions were made, and yours were made later and better.
 
+### A note on the point value, new as of today
+
+This stage is now worth **15 points** rather than the 8 in the stage brief, and **Stage 1.3** — the analysis, the memo, and the prompt log — is now worth **15** as well. Cases 2 and 3 have been dropped for this cohort, so Case 1 *is* the case.
+
+In practice: this stage and the next one are together worth **30 of the 35 points** on the case. Stage 0 and Stage 1.1 are 2.5 each. The weight has moved onto the build and the analysis, which is where the work actually is.
+
+Nothing about the grading changes — the score is still out of 100 and converted at the end. The stage brief and the case page still show the old numbers; they have not been updated yet.
+
 ---
 
 ### How to work this review
