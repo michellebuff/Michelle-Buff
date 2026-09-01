@@ -257,11 +257,37 @@ The workbook must clearly report:
 
 ## Audit Findings
 
-This section will be completed after the workbook is generated.
+### 1. Labor formula hand-check
 
-For each audit test, record:
+- **Checked:** Tomato labor at q=1 and q=10.
+- **Intended to catch:** A missing or incorrectly applied diminishing-returns exponent.
+- **Found:** q=1 returned 99 hours and q=10 returned 2,334.37 hours, matching the independent calculations.
+- **Action:** No correction required.
 
-- what was checked;
-- what the check was intended to catch;
-- what was found;
-- what action was taken if the model failed the check.
+### 2. Farm Profit Lab marginal-cost cross-check
+
+- **Checked:** The marginal cost of increasing standalone tomatoes from 10 beds to 11 beds.
+- **Intended to catch:** A mismatch between the workbook's marginal-cost calculation and the independent Farm Profit Lab.
+- **Found:** Farm Profit Lab variable cost increased from $61,827 at 10 beds to $71,218 at 11 beds, giving marginal cost of $9,391. The workbook calculated $9,390.72, which matches after rounding.
+- **Action:** No correction required.
+
+### 3. Solver starting-point test
+
+- **Checked:** Solver was run from both 0/0/0 and 20/0/0 starting points.
+- **Intended to catch:** Sensitivity to starting values or Solver reaching different solutions.
+- **Found:** Both runs reached 10 tomato, 20 carrot, and 30 mesclun beds with profit of approximately $42,761.66.
+- **Action:** No correction required.
+
+### 4. Solver integer-constraint check
+
+- **Checked:** Solver's integer settings and the workbook's whole-number validation.
+- **Intended to catch:** Solver returning fractional bed quantities despite the model requiring whole beds.
+- **Found:** Excel initially had "Ignore Integer Constraints" enabled, which produced a fractional tomato result. The workbook's integer check flagged the result as non-integer.
+- **Action:** "Ignore Integer Constraints" was turned off and Solver was rerun. The resulting 10/20/30 solution satisfied the integer requirement.
+
+### 5. Structural and formula check
+
+- **Checked:** Calculated cells, named-input references, error checks, constraints, and visible constraint-status formatting.
+- **Intended to catch:** Pasted values, broken formulas, spreadsheet errors, or failed constraints.
+- **Found:** Calculated cells remained formula-driven, no REF/DIV0/NAME errors were present, all acceptance and structural checks passed, and all constraint statuses displayed green after regeneration.
+- **Action:** The specification was updated to require visible green/red constraint-status formatting and the workbook was regenerated from the revised specification. 

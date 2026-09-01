@@ -121,3 +121,29 @@ I read and reviewed the specification myself before approving any changes. I que
 
 **What I learned:**  
 A strong specification should remove ambiguity before a model is built. Small details—such as handling a zero-value case or defining what "standalone" means—can create major errors later if they are left for the builder to interpret.
+
+## 2026-08-31 — Stage 2 Workbook Build and Audit
+
+**AI tool:** Claude (Anthropic)
+
+**Task:**  
+Generate `capabilities/marginal-analysis/model.xlsx` from my committed specification at `capabilities/marginal-analysis/spec.md`, then verify the result myself in desktop Excel before anything was committed.
+
+**AI contribution:**  
+Claude built the workbook from the specification — five worksheets, named ranges for every input, live formulas in every calculated cell, and the published check figures written in as acceptance criteria rather than hard-coded results. After I identified a presentation defect against the Stage 1.2 requirements, Claude added the conditional-formatting requirement to the spec, committed the spec change first, and regenerated the workbook from the revised specification.
+
+**My verification / decisions:**  
+I audited the workbook manually in desktop Excel.
+
+- Labor hand-checks passed: tomato labor at `q = 1` returned 99 hours and at `q = 10` returned approximately 2,334.37 hours.
+- Solver was run from both `0 / 0 / 0` and `20 / 0 / 0`. Both starting points reached 10 tomato, 20 carrot, and 30 mesclun beds with a season profit of approximately $42,761.66.
+- Excel initially had "Ignore Integer Constraints" enabled, which produced a fractional result. The workbook's whole-number check caught it. I disabled that option and reran Solver successfully.
+- I independently cross-checked the marginal cost of the 11th tomato bed using the Farm Profit Lab. Variable cost rose from $61,827 at 10 beds to $71,218 at 11 beds, giving a marginal cost of $9,391. The workbook reports $9,390.72, which matches after rounding.
+- Formula spot-checks and structural checks passed.
+
+I then updated the specification to require green/red conditional formatting on constraint-check status cells, and the workbook was regenerated from the revised spec. I rechecked the regenerated workbook manually and all acceptance criteria passed.
+
+**What I learned:**  
+I learned that selecting the correct fields and settings in Solver is critical. During the first 0/0/0 run, I did not realize there was an option to ignore integer constraints, and that caused Solver to return a fractional result. Catching that helped me better understand how important it is to review both the Solver setup and the model's validation checks.
+
+I also learned how powerful AI can be for building complex workbooks and how much time it could save me in my own work. At the same time, this made me think more seriously about the risk of losing some cognitive reasoning and creative problem-solving skills if we rely too heavily on AI. AI can do a tremendous amount of the technical work, but we still need to understand the process well enough to question the output, verify the quality, and step in when something is wrong.
