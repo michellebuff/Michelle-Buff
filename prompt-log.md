@@ -147,3 +147,21 @@ I then updated the specification to require green/red conditional formatting on 
 I learned that selecting the correct fields and settings in Solver is critical. During the first 0/0/0 run, I did not realize there was an option to ignore integer constraints, and that caused Solver to return a fractional result. Catching that helped me better understand how important it is to review both the Solver setup and the model's validation checks.
 
 I also learned how powerful AI can be for building complex workbooks and how much time it could save me in my own work. At the same time, this made me think more seriously about the risk of losing some cognitive reasoning and creative problem-solving skills if we rely too heavily on AI. AI can do a tremendous amount of the technical work, but we still need to understand the process well enough to question the output, verify the quality, and step in when something is wrong.
+
+## 2026-08-31 — Stage 1.2 Reviewer Feedback and Finalization
+
+**AI tools:** ChatGPT (OpenAI) and Claude (Anthropic)
+
+**Task:**  
+Reviewed Professor Stauffer's updated Stage 1.2 feedback, compared it against my completed specification and workbook, and closed the loop on the remaining documentation issues before final submission.
+
+**AI contribution:**  
+ChatGPT helped me interpret the review, distinguish between feedback that required a model change and feedback that only required documentation clarification, and refine my response to the professor. Claude made the final documentation-only updates to `spec.md` after I approved them.
+
+**My verification / decisions:**  
+I reviewed the professor's comments myself before making changes. I kept the completed workbook unchanged because the remaining issues did not affect the model logic. I updated the specification status and date, clarified that `TEMP_WORKERS_NEEDED` represents a fractional full-time-equivalent requirement rather than a rounded headcount, and documented the tomato marginal-cost dip for Stage 3 without explaining it prematurely.
+
+I also responded to the review by documenting what I changed, where I made a different analytical decision, and what the audit caught. The final workbook remained consistent with the specification and all previously completed validation and Solver checks.
+
+**What I learned:**  
+Reviewer feedback is not just a checklist to follow. I need to understand what problem each comment is trying to solve, decide whether it affects the specification, the model, or only the documentation, and make the smallest change that keeps all three consistent. I also learned that closing the loop with a reviewer is part of the analytical process because it shows not only what changed, but why I agreed or disagreed with the feedback.
