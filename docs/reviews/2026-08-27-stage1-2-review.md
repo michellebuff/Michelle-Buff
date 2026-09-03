@@ -1,53 +1,51 @@
 <!-- PR TARGET: https://github.com/michellebuff/Michelle-Buff | Stage 1.2 (8 pts) -->
 # Stage 1.2 review — spec, build, audit
 
-**Spec-side 61 out of 62.5 — held, not entered. The workbook is not due until 6 September and none was expected yet.**
+**You scored 100 out of 100 (A+) — 15.00 of the 15 points for this stage. Entered.**
 
 **Spec:** [`capabilities/marginal-analysis/spec.md`](https://github.com/michellebuff/Michelle-Buff/blob/main/capabilities/marginal-analysis/spec.md)
 
-> Re-graded 2026-08-31. Your previous spec-side result was 57 of 62.5. You closed both gaps I named and the validation section is now full marks — it is one of the two best in the cohort and it caught something before I could tell you about it.
+> Re-graded 2026-09-02 against your 1 September build. Your previous result was a spec-side 61 of 62.5 with no workbook, which was the correct state at the time. The workbook now exists, it passes every check you wrote for it, and every value in it agrees with mine to the digit. This is the second full-marks submission in the cohort and it earned it on a different strength than the first.
 
 | Criterion | Earned | Notes |
 |---|---|---|
-| Spec completeness — inputs, structure, calculation flow | 36 / 37.5 | Up from 35. The derived-input rule is now explicit and enforced — FARMER_PAID_HOURS as 40 x SEASON_WEEKS, FARMER_FIELD_RATE from salary over paid hours, TEMP_RATE from salary over hours, and carrot labor as 2.50 / 3 rather than the displayed 0.833 — with the rule stated underneath that derived values must never be replaced with rounded hard-coded ones. A workbook in this cohort has that exact defect live right now and its profit is $13 off because of it. The non-monotonic crossing rule is new and correctly stated as an upward scan to the first crossing. The zero-hours guard on the blended rate is the detail I want to point at: you required it, and you wrote down why — Solver must run from 0/0/0 as part of the audit, an unguarded division returns #DIV/0! at that point, and that would fail your own structural check. A rule with its reason attached survives a builder who thinks it is unnecessary. The remaining point and a half is that TEMP_WORKERS_NEEDED has no rounding rule stated — you clearly intend fractional, since your acceptance figure is 3.165 workers, but a builder could reasonably read the constraint as a headcount and round up. |
-| Spec validation rules | 25 / 25 | Full marks, up from 22, and every one of the three gaps I named is closed. Every acceptance figure now carries a tolerance. The Solver two-starting-point procedure is specified. And the labor anchor at q = 10 is in, with the reason written into the spec rather than left implicit: "This second check verifies that the 10% diminishing-return factor is compounded across the full crop quantity rather than applied only once." That is exactly right, and it is the check that catches the one defect a q = 1 anchor cannot see. |
-| Workbook satisfies the contract | 0 / 25 | No workbook yet, and none was due. Nothing is lost here — this is what the stage expects at this point, and writing the specification first is the entire method. |
-| Audit note | 0 / 12.5 | Correctly a stub, and the stub already names the four questions each finding must answer: what was checked, what the check was intended to catch, what was found, and what action was taken. The second of those is the one most people leave out and it is the one that makes a finding evidence rather than a note. |
-| **Spec-side subtotal** | **61 / 62.5** | the part that can be earned before a workbook exists |
+| Spec completeness — inputs, structure, calculation flow | 37.5 / 37.5 | Up from 36, and full marks. The remaining point and a half was TEMP_WORKERS_NEEDED having no rounding rule, and you closed it in one sentence that says the value is a fractional full-time-equivalent, must not be rounded up, and that the Solver constraint applies to the fractional value. That is the ambiguity gone. You also added a requirement I did not ask for and would not have thought to — that constraint-status cells must use conditional formatting so passes read green and failures read red — and you added it the right way round, by amending the specification first and regenerating the workbook from it. |
+| Spec validation rules | 25 / 25 | Unchanged at full marks. Every acceptance figure carries a tolerance with a reason, the two-starting-point Solver procedure is specified, and the q = 10 labor anchor is in with its purpose written down. |
+| Workbook satisfies the contract | 25 / 25 | Fifty-six named ranges, zero error cells, every calculated cell a formula, and numeric literals only where they belong — case inputs, q index columns, the three decision cells, and the acceptance targets. Every figure reconciles: profit $42,761.66, labor 5,277.2161 hours, 3.1647 temp workers, blended rate $19.7298, marginal cost $8,248.59 at tomato bed 10 and $9,390.72 at bed 11, crossings 10 / 10 / 6. FARMER_FIELD_RATE and TEMP_RATE are derived formulas and CAR_HRS is TOM_HRS/3 rather than 0.833, which is the defect that cost another workbook in this cohort a failed check. And you went past the contract: three identity checks (labor hours reconcile, variable plus fixed equals total, crop revenue sums to total) that catch a class of error the acceptance figures cannot. |
+| Audit note | 12.5 / 12.5 | Five findings, each answering all four of the questions your own stub said a finding must answer. Two of them are real discoveries rather than confirmations — see below. The Farm Profit Lab cross-check is there and done properly: $61,827 to $71,218 across tomato beds 10 to 11 gives $9,391 against your workbook's $9,390.72. |
+| **Final** | **100 / 100** | entered |
 
-### The rule that matters most in your spec
+### The integer-constraint finding, which is the best thing in this submission
+
+"Excel initially had 'Ignore Integer Constraints' enabled, which produced a fractional tomato result. The workbook's integer check flagged the result as non-integer."
+
+Read what happened there. Solver returned an answer. The answer was wrong in a way that is almost invisible — a bed count of 10.0000001 displays as 10 — and it was wrong because of a setting buried in Solver's Options dialog that most people never open. Nothing about the output announced it.
+
+It was caught because you had written a check for it before you ran anything. Not because you noticed, not because it looked odd, but because the specification said whole beds and you built a cell that tests whether the beds are whole. That is what a validation rule is for: it catches the failure you would not have been looking for.
+
+The general version of this is worth carrying well past this course. The checks that pay for themselves are the ones written before you know what the answer looks like, because after you know, you write checks that the answer passes.
+
+### The other thing that separates this workbook
+
+Your Checks sheet has a row nobody else has: "Marginal-cost shape — beds where MC falls below the prior bed," counted programmatically per crop. It returns 1 for tomatoes and 2 each for carrots and mesclun.
+
+You did not explain it — the specification says to note it and leave it for Stage 1.3, and you followed your own rule. But you built a cell that measures it, which means the observation is a number rather than an impression, and in Stage 1.3 you will be reasoning from data instead of from memory.
+
+When you get there: the dip happens where the marginal labor source changes. The farmer's 720 hours are consumed first, so the bed that exhausts them is partly priced at her $34.72 an hour, and the next bed is entirely at the temporary rate of $17.36. A cost curve that falls in the middle looks like a bug and is not one.
+
+### The rule from your spec that i keep quoting
 
 "If any validation check fails because the specification is incomplete or ambiguous, the specification must be corrected and committed before the workbook is regenerated. The workbook must not be manually patched to force a passing result."
 
-That is the whole discipline of this stage in two sentences, and you are the only person who wrote it down as a rule rather than following it implicitly. The reason it matters: a workbook patched by hand still passes its checks, and the spec beside it now describes a model that does not exist. Six months later the spec is the only documentation and it is wrong.
+You wrote that before you had a workbook, and then this pass you had a real chance to break it — the constraint-status formatting was missing and the fast fix was to colour the cells by hand. Your audit records the other choice: "The specification was updated to require visible green/red constraint-status formatting and the workbook was regenerated from the revised specification."
 
-Hold yourself to it when the first check fails, because that is when it will feel expensive.
+That is the discipline this stage exists to teach, and following it when it costs you something is the only test of whether you have it.
 
-### The MC dip
+### Stage 1.3
 
-Your structural checks include "The tomato marginal-cost dip around six beds should be visible and noted for later analysis, but it should not be artificially created or explained in the model." Both halves of that are right and the second half is the subtle one.
+You have three things to write about and they are all already in your repository: the integer-constraint finding, the marginal-cost dip with the labor-source explanation behind it, and the comparison between your committed brief and what the model returned.
 
-A model that expects a dip can be nudged into producing one. Requiring the dip to be visible and explicitly forbidding yourself from explaining it in Stage 2 is how you keep the observation independent of the interpretation. Stage 3 is where the explanation goes.
-
-### What to do next
-
-Build it. The specification is ready and there is nothing left to decide in it.
-
-One sequencing suggestion: build the standalone marginal-cost schedules before the optimization. They are the part your Stage 1.1 brief is a prediction about, they do not depend on Solver, and if they are wrong every downstream number is wrong in a way that is hard to see. The q = 1 and q = 10 anchors both live in that block, so you can validate the engine before anything else is built on top of it.
-
-Then Solver from both starting points, then the Farm Profit Lab cross-check on one intermediate value, then the audit. Your spec already says to correct the spec rather than the workbook when something fails — that is the sentence to reread at that point.
-
-### One organizational note
-
-Your spec frontmatter still reads status: draft and date: 2026-08-23, and the document has moved substantially since then. Update both when you commit the version you build from — the date on a spec is a claim about when its decisions were made, and yours were made later and better.
-
-### A note on the point value, new as of today
-
-This stage is now worth **15 points** rather than the 8 in the stage brief, and **Stage 1.3** — the analysis, the memo, and the prompt log — is now worth **15** as well. Cases 2 and 3 have been dropped for this cohort, so Case 1 *is* the case.
-
-In practice: this stage and the next one are together worth **30 of the 35 points** on the case. Stage 0 and Stage 1.1 are 2.5 each. The weight has moved onto the build and the analysis, which is where the work actually is.
-
-Nothing about the grading changes — the score is still out of 100 and converted at the end. The stage brief and the case page still show the old numbers; they have not been updated yet.
+One standing rule: do not revise the brief to match the model. If they disagree, that is the finding.
 
 ---
 
