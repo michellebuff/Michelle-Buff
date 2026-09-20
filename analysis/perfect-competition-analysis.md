@@ -14,15 +14,7 @@ Tomato marginal cost dips around bed 6 because the farmer’s more expensive lab
 
 ## 4. Why grow crops that appear unprofitable alone?
 
-<!--
-Evidence to supply:
-- Carrots and mesclun at their optimal quantities: AVC $1,918.45 vs. naive full-fixed-cost
-  ATC $2,918.45 vs. price $2,094 (carrots); AVC $2,430.74 vs. naive ATC $3,097.41 vs. price
-  $2,700 (mesclun).
-- Why P vs. AVC is the right comparison instead of P vs. ATC — fixed costs are sunk
-  regardless of the planting decision.
-- Tie to the airline half-empty-route parallel from the Stage 3 page if useful.
--->
+Carrots and mesclun may appear unprofitable when the entire farm fixed cost of $20,000 is assigned to each crop separately. However, the short-run decision should compare price with average variable cost. At the selected quantities, carrot price is $2,094 compared with AVC of $1,918.45, while mesclun price is $2,700 compared with AVC of $2,430.74. (Marginal Analysis! Variable-cost columns) Because the price exceeds AVC for both crops, each additional bed covers its variable production cost and contributes toward the farm’s unavoidable fixed cost. Therefore, the optimizer grows both crops to their allowed limits even though assigning the full fixed cost to each crop makes their individual ATC appear higher than price.
 
 ## 5. Revisit the Stage 1 hypothesis
 
