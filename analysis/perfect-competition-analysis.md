@@ -18,12 +18,6 @@ Carrots and mesclun may appear unprofitable when the entire farm fixed cost of $
 
 ## 5. Revisit the Stage 1 hypothesis
 
-<!--
-Evidence to supply:
-- Quote the original hypothesis from docs/briefs/perfect-competition-brief.md (20 carrot /
-  30 mesclun / 14 tomato beds).
-- State the actual result (10/20/30) — which parts were right (carrots, mesclun exact) and
-  which were wrong (tomatoes, off by 4 beds).
-- Use the tomato MC data at beds 11-14 (all MC > price) to explain specifically why the
-  14-bed tomato prediction failed, not just that it did.
--->
+My original hypothesis predicted 20 carrot beds, 30 mesclun beds, and 14 tomato beds (docs/briefs/perfect-competition-brief.md). The optimized result was 20 carrot beds, 30 mesclun beds, and 10 tomato beds (Optimization!B6:B8). I correctly predicted the carrot and mesclun caps, but I overestimated tomato production by four beds. The error came from assuming tomatoes’ high price justified continuing production without comparing each bed’s marginal cost with its price. At bed 11, tomato marginal cost was $9,390.72 (Marginal Analysis!H17) compared with a price of $8,800, and the later beds remained above price. The model showed me that maximizing the number of beds is not the same as maximizing profit.
+
+I understand that labor costs generally increase as the number of beds increases. This makes sense because tending more beds requires more time, energy, and physical labor. A farmer might complete the first bed in 30 minutes, but later beds may take longer as the work accumulates. In this model, time is money.
