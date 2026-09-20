@@ -10,18 +10,7 @@ Carrot and mesclun bed constraints are binding because the optimized plan uses t
 
 ## 3. Why tomato marginal cost dips around bed 6
 
-<!--
-Evidence to supply:
-- The labor hours/rate split at beds 5-6 (Marginal Analysis!C11:D12): farmer's 720 hours
-  run out around bed 5, temp labor covers bed 6 onward.
-- The rate gap driving the dip: FARMER_FIELD_RATE $34.72/hr (Inputs!B11) vs. TEMP_RATE
-  $17.36/hr (Inputs!B15).
-- Explain, in your own words, why a cheaper marginal input taking over can make MC fall
-  even though total hours are still rising.
-- Reference figures/tomato-mc-vs-price.png.
-- Optional: Checks!B36:B38 shows this same mechanism also fires for carrots (beds 17-18)
-  and mesclun (beds 14-15) — worth noting if you want to show it's not tomato-specific.
--->
+Tomato marginal cost dips around bed 6 because the farmer’s more expensive labor reaches its available limit at $34.72 per hour (Inputs!B11), and cheaper temporary labor begins covering the additional labor needed at $17.36 per hour (Inputs!B15). The labor-hour shift can be seen in Marginal Analysis!C11:D12. This causes marginal cost to fall from $7,660.86 at bed 5 (Marginal Analysis!H11) to $4,906.28 at bed 6 (Marginal Analysis!H12). This relationship can also be seen in the tomato marginal-cost chart (analysis/figures/tomato-mc-vs-price.png).
 
 ## 4. Why grow crops that appear unprofitable alone?
 
