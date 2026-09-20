@@ -24,6 +24,9 @@ Desktop.ini
 secrets/
 private/
 
+# Local scratch workspace, not part of any deliverable
+scratch/
+
 # Python cache files that are not project deliverables
 __pycache__/
 *.pyc

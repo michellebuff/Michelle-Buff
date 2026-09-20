@@ -190,3 +190,19 @@ I verified that the numbers in the analysis matched the audited workbook and con
 
 **What I learned:**  
 I learned that maximizing the number of beds is not the same as maximizing profit. The key decision is comparing price with marginal cost, while also recognizing that fixed costs are paid at the farm level and that labor-cost changes can affect marginal cost in unexpected ways. I also learned that careful cell verification matters because a small citation or wording error can change the meaning of the analysis.
+
+## 2026-09-20 — BUS 620 Individual Research Paper: Topic Direction and Repository Scaffold
+
+**AI tools:** ChatGPT (OpenAI) and Claude (Anthropic)
+
+**Task:**  
+Explored possible topics for the BUS 620 Individual Research Paper and prepared the repository scaffold for the work that follows.
+
+**AI contribution:**  
+ChatGPT helped me explore possible research topics. Claude was used only to prepare the repository scaffold: adding `scratch/` to `.gitignore`, creating `capabilities/economic-research/` with a minimal `README.md`, and adding tracked placeholder `drafts/` and `figures/` directories.
+
+**My verification / decisions:**  
+I selected China's demographic decline and the legacy of the one-child policy as my current working direction. It is a topic direction only, not yet a thesis or argument. No research brief, specification, analysis, recommendation, or paper prose was generated in this session; those remain mine to write. I reviewed the scaffold changes before they were committed.
+
+**What I learned:**  
+_(to be written)_
