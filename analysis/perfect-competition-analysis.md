@@ -6,18 +6,7 @@ Tomatoes remain profitable at the margin through bed 10. At bed 10, the tomato p
 
 ## 2. Which constraints bind and what relaxing them is worth
 
-<!--
-Evidence to supply:
-- Which Optimization-sheet constraints are binding vs. slack, from Optimization!B22:E29
-  (CAR_BEDS <= 20 and MES_BEDS <= 30 sit at their caps; total beds, temp workers, and the
-  tomato cap all have room to spare).
-- The shadow price of relaxing each binding cap by one bed: CAR_MAX_BEDS 20->21 is worth
-  $352.49; MES_MAX_BEDS 30->31 is worth $246.47. Note these came from re-optimizing the
-  spec's formulas outside Excel, since Excel's Solver can't produce a Sensitivity Report
-  once integer constraints are on — say so and how you'd verify it in Excel.
-- Why the slack constraints are worth $0 to relax right now.
-- Reference figures/carrot-mc-vs-price.png.
--->
+Carrot and mesclun bed constraints are binding because the optimized plan uses their full limits: 20 carrot beds and 30 mesclun beds (Optimization!B25:D25 and Optimization!B27:D27). The tomato, total-bed, and temporary-worker constraints are slack because the optimized plan remains below those limits. The tomato-cap, total-bed, and temporary-worker constraints are slack because the optimized plan is below their limits (Optimization!B23:D23, Optimization!B28:D28, and Optimization!B29:D29). Relaxing a constraint means increasing its maximum by one bed and rerunning Solver. When the carrot cap increased from 20 to 21 beds, optimized profit increased by $352.49. Increasing the mesclun cap from 30 to 31 beds increased profit by $246.47. Because the carrot cap has the larger shadow price, I would relax the carrot constraint first. I calculated these shadow prices by changing each cap in the workbook, rerunning Solver, and comparing the new profit to the original optimized profit of $42,761.66 (Optimization!B11).
 
 ## 3. Why tomato marginal cost dips around bed 6
 
