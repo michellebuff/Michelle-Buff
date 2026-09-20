@@ -2,14 +2,7 @@
 
 ## 1. Why tomatoes stop at 10 beds
 
-<!--
-Evidence to supply:
-- Standalone tomato MC at bed 10 ($8,248.59) and bed 11 ($9,390.72) vs. the $8,800 price
-  (Marginal Analysis!H16:H17, I16:I17).
-- Why the deciding rule is P vs. MC at the margin, not total or per-bed revenue —
-  tomatoes have the highest price of the three crops but still stop earliest.
-- Reference figures/tomato-mc-vs-price.png and say what it shows.
--->
+Tomatoes remain profitable at the margin through bed 10. At bed 10, the tomato price is $8,800 (Marginal Analysis!I16) and the marginal cost is $8,248.59 (Marginal Analysis!H16), leaving a marginal contribution of $551.41. However, the marginal cost rises to $9,390.72 at bed 11 (Marginal Analysis!H17), which is greater than the $8,800 price. Therefore, the farmer stops at 10 beds because the eleventh bed would reduce profit. This can also be seen in the tomato marginal-cost chart (analysis/figures/tomato-mc-vs-price.png).
 
 ## 2. Which constraints bind and what relaxing them is worth
 
