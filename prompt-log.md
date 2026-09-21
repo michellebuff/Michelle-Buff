@@ -206,3 +206,26 @@ I selected China's demographic decline and the legacy of the one-child policy as
 
 **What I learned:**  
 _(to be written)_
+
+## 2026-09-21 — Stage 1.1 Review Response and Repository Cleanup
+
+**AI tool:** Claude (Anthropic)
+
+**Task:**  
+Locate and work Professor Stauffer's Stage 1.1 review, which I had replied to in the pull request thread but never actually acted on in the repository. Revise `docs/briefs/perfect-competition-brief.md` to address the two gaps he identified, and clean up two Stage 0 standards issues in the repository.
+
+**AI contribution:**  
+Claude found the review in the open pull request "Stage 1.1 review — engagement brief" and read it alongside my brief, spec, analysis, and memo. It then independently reproduced the tomato marginal-cost schedule from the case formula `q × 2.5 × 36 × 1.10^q` and the farmer and temporary labor rates, without reading values out of the workbook, and cross-checked the result against my audited model. The independent calculation matched at every point I had previously hand-checked: $8,248.59 at bed 10, $9,390.72 at bed 11, and the dip from $7,660.86 to $4,906.28 between beds 5 and 6. It produced the figure my revision needed — a marginal cost of approximately $13,826 for the 14th tomato bed against the $8,800 price.
+
+**What Claude flagged that changed how I did this:**  
+The most useful thing Claude did was warn me about a trap I was walking into. Because Stage 3 was already finished and had returned 10 tomato beds, any edit to the brief risked reading as though I had quietly revised my prediction to match my own model. Professor Stauffer's review closes with a standing rule against exactly that. Claude proposed keeping the original hypothesis untouched and adding the new material as a dated revision section instead, so the timeline stays visible rather than hidden.
+
+Claude also flagged that `BIO.md` should not exist. Stage 0 calls for a single bio in `README.md`, and my two versions had drifted apart, with the better-written one sitting in the file a reader never opens.
+
+**My verification / decisions:**  
+I decided to keep the 14-bed hypothesis exactly as committed on 2026-08-23. I wrote both new sections myself — the explanation of where 14 came from and the falsification criteria — rather than having Claude draft them, because a hypothesis and its refutation conditions have to be mine for the Stage 3 comparison to mean anything. I reviewed the marginal-cost figure before using it and confirmed it was consistent with the numbers already cited in my analysis. I chose to move the `BIO.md` text into `README.md` rather than the reverse, because it was the stronger draft and its AI-disclosure line was properly formatted.
+
+**What I learned:**  
+Replying to a reviewer is not the same as responding to one. I answered Professor Stauffer in the thread in August and genuinely agreed with him, but the brief itself went unchanged for a month, so from the repository's point of view nothing happened. The commit is the response.
+
+I also learned that the timing of a revision carries information. Editing the brief after the model had already contradicted it would have destroyed the one thing that makes the Stage 1 prediction worth anything, which is that it was committed before I knew the answer. Dating the revision and leaving the wrong prediction standing costs nothing and keeps the record honest.
