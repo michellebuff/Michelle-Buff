@@ -10,7 +10,7 @@ The plan follows the marginal decision rule of producing additional beds when pr
 
 ## 3. Judgment call: which cap to relax first
 
-I would relax the carrot cap first. Increasing the carrot limit from 20 to 21 beds increased optimized profit by $352.49, while increasing the mesclun limit from 30 to 31 beds increased profit by $246.47. The carrot cap therefore has the greater shadow price and offers the larger immediate return from expansion.
+I would relax the carrot cap first. Increasing the carrot limit from 20 to 21 beds increased optimized profit by $352.49, while increasing the mesclun limit from 30 to 31 beds increased profit by $246.47. The carrot cap therefore has the greater shadow price and offers the larger immediate return from expansion. The $352.49 is the value of relaxing the carrot cap by one bed, from 20 to 21. It is not a constant that can be applied automatically to every further carrot bed, and any expansion beyond bed 21 would need to be re-evaluated at the new margin.
 
 ## 4. What would change the recommendation
 

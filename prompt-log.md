@@ -205,7 +205,7 @@ ChatGPT helped me explore possible research topics. Claude was used only to prep
 I selected China's demographic decline and the legacy of the one-child policy as my current working direction. It is a topic direction only, not yet a thesis or argument. No research brief, specification, analysis, recommendation, or paper prose was generated in this session; those remain mine to write. I reviewed the scaffold changes before they were committed.
 
 **What I learned:**  
-_(to be written)_
+I learned that this prompt log is graded as part of Perfect Competition even though I used this one for my BUS Individual Research Paper.  :)
 
 ## 2026-09-21 — Stage 1.1 Review Response and Repository Cleanup
 
@@ -229,3 +229,7 @@ I decided to keep the 14-bed hypothesis exactly as committed on 2026-08-23. I wr
 Replying to a reviewer is not the same as responding to one. I answered Professor Stauffer in the thread in August and genuinely agreed with him, but the brief itself went unchanged for a month, so from the repository's point of view nothing happened. The commit is the response.
 
 I also learned that the timing of a revision carries information. Editing the brief after the model had already contradicted it would have destroyed the one thing that makes the Stage 1 prediction worth anything, which is that it was committed before I knew the answer. Dating the revision and leaving the wrong prediction standing costs nothing and keeps the record honest.
+
+## Reflection — Perfect Competition engagement
+
+AI assisted me with a lot of the economics in this project. It helped to simplify a lot of the complexities that are unfamiliar to me and help explain why tomatoes stop at 10 beds using P=MC, why carrots and mesclun are binding while total beds/temporary labor is slack, why tomato MC dips around bed 6, and several other economic facts within the Perfect Competition work. I had to correct AI a few times regarding my repo in GitHub, there had been work that I thought was committed to main that wasn't and I mistakenly trusted AI, but when I went back the next day I realized I had to reengage AI to commit. I also had to remind AI to reference the 1.3 instructions web page and would feed it the info multiple times to ensure nothing was missed and usually it would find one or two requirements we missed or misinterpreted. I learned that AI is incredibly powerful, to a scary degree, but it’s here and we must learn AI because AI is learning us….very, very, fast. I also learned a lot about economics, for instance my hypothesis was to fill the beds to the maximum capacity. I understood this was risky and I had no factual numbers to back this up. In my reality that would be the mistake a lot of first-time business owners make when starting up. They purchase products or provide a service that is not producing enough revenue to cover the cost of producing the product/service itself (employees, bldg space, supplies, etc.) and therefore are not able to build their profit. This project opened my eyes to marginal cost and how it can help businesses to understand their financially position and potentially look at different options to help maximize profit.
