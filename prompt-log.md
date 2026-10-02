@@ -230,6 +230,89 @@ Replying to a reviewer is not the same as responding to one. I answered Professo
 
 I also learned that the timing of a revision carries information. Editing the brief after the model had already contradicted it would have destroyed the one thing that makes the Stage 1 prediction worth anything, which is that it was committed before I knew the answer. Dating the revision and leaving the wrong prediction standing costs nothing and keeps the record honest.
 
+## 2026-09-21 — Research Paper: Testing the One-Child-Policy Framing and Policy Levers
+
+**AI tool:** Claude (Anthropic)
+
+**Task:**  
+Stress-tested my working question about the one-child policy's role in China's demographic decline, and talked through possible policy levers.
+
+**AI contribution:**  
+Claude pointed out that most of China's neighbors (South Korea, Taiwan, Hong Kong, Japan) reached fertility as low as or lower than China's without a one-child policy. It also noted that China's fertility had already fallen sharply in the 1970s, before the policy existed. It suggested treating Korea as an imperfect comparison and asking what the policy *added* (sex ratio, speed of aging) rather than whether it *caused* the decline. It then outlined the policy levers (retirement age, hukou reform, automation, women's labor force participation, immigration) and noted that pronatalist subsidies have a poor international track record. Claude labeled all figures in this session as from memory, to be verified before use.
+
+**My verification / decisions:**  
+I recognized this subject was too broad and it was difficult to narrow down a tighter hypothesis to support the requirements and limitations given. 
+
+**What I learned:**  
+I learned building a hypothesis can be difficult. You can't just have a problem. You must have a solution or prove something will happen because of the problem. Or even show how the problem impacts. Also this is an economy paper and I recognized that my desire to do a paper about the one-child policy and how it impacted China may not have been the best topic for a 4 page econ paper as the impacts are still being felt and studied and many of the impacts effect more than the economy. 
+
+## 2026-09-24 — Research Paper: Hukou, Choosing a Reader, and Guns vs. Butter
+
+**AI tool:** Claude (Anthropic)
+
+**Task:**  
+Learned how China's hukou (household registration) system works. Decided who my paper is written for, chose a framing, and pulled the first real numbers.
+
+**AI contribution:**  
+Claude explained hukou: its origin, why migrants can't easily move their children, and the points-based transfer systems. It found a peer-reviewed study that used city-by-city hukou reform as a natural experiment (Dong, Liang & Zhang, 2023, *China Economic Review*), which reported migrants' childbearing rising about 11% after reform. Claude walked back one of its own earlier objections because of that evidence. It framed three possible readers (Beijing, a company, or Washington) and explained the economics behind "guns vs. butter" and how a "leverage" angle could serve as the U.S. recommendation. It pulled IMF and SIPRI figures through web search. Once I uploaded the IMF working paper (Bonthuis, Cao & Freudenberg, 2026), Claude read it and confirmed the numbers (pension spending 5.4% of GDP in 2024, 15.3% in 2050 without reform, 11.9% with the 2024 reform). It also located a free World Bank copy of *The Elderly and Old Age Support in Rural China* (Cai et al., 2012).
+
+**My verification / decisions:**  
+I made the decision to find a hypothesis that was more aligned with my current profession in federal defense. I also decided even though my paper will be about China. My audience is the U.S. Government. 
+
+**What I learned:**  
+I learned about guns vs butter. I've heard the term but I got a quick deep dive into what it means and how it impacts a nations economy. I also continued to understand how much narrower my topic needed to be.
+
+## 2026-09-25 — Research Paper: Sources and First Hypothesis Drafts
+
+**AI tool:** Claude (Anthropic)
+
+**Task:**  
+Drafted my first hypotheses and sourced the defense-spending ("guns") side of the comparison.
+
+**AI contribution:**  
+Claude critiqued my early drafts. They bundled several causes together and predicted a war, which my data could not test. It suggested narrowing to one cause, one measurable outcome, a timeframe, and a test that could prove me wrong. It sourced SIPRI's estimate of China's 2025 military spending ($336B, 1.7% of GDP) against China's official budget (about ¥1.78T, roughly 1.5%), and the U.S. burden (about 3.1%). It pointed out that the IMF's 15.3% pension figure is a 2050 number and a share of GDP, not of the government budget. It traced an article I found back to its primary source, the Chinese Academy of Social Sciences *Pension Fund Actuarial Report 2019–2050* (urban workers' pension savings projected to reach zero in 2035). The first link I shared turned out to be an unrelated article on Brazil. Claude also read and summarized the two PDFs I uploaded.
+
+**My verification / decisions:**  
+Since I had somewhat of a hypothesis generally put together I began to collect sources to help me determine what kind of data was out there that could be a main focus to me. 
+
+**What I learned:**  
+I learned that most of my hypothesis against the China budget had primarily been driven by their declining population and increase of pension payouts starting at 2035 through 2050. I also continued to focus on hypothesis that would either ask if China would start a war or if China could afford to start a war due to their rapidly aging population. Claude also warned me that due to my profession it could be risky to write a paper predicting a War with China. So instead of focusing on the possibility of War I thought maybe I get the war out of the way and just say it happens...now what.
+
+## 2026-09-28 — Research Paper: Locking the Hypothesis (Stimulus and Recovery After a Taiwan Shock)
+
+**AI tool:** Claude (Anthropic), ChatGPT (OpenAI)
+
+**Task:**  
+Worked through several hypothesis versions and settled on a recovery-speed comparison between China and the U.S. after a Taiwan-conflict shock. Found evidence for the mechanism and chose a U.S. recommendation.
+
+**AI contribution:**  
+Claude read Figure 9 of the IMF paper (page 27): pension spending is roughly flat until about 2030 and accelerates from the early 2030s. It sourced year-one shock estimates for a Taiwan conflict: Bloomberg Economics (China −11%, U.S. −6.6%) and RAND (2016; China −25% to −35%). It confirmed that no public model covers years 2–5 of the recovery. After I uploaded it, Claude read Chen, Guo & Zhang (2025, *Economic Modelling*), which finds the output effect of monetary stimulus falls more than 30% as China ages, through a weaker investment channel. It explained that "not statistically significant" means no measurable effect, not a negative one. It explained how it compared U.S. policy options and the "what's new" objection to each.
+
+**Where the AI was wrong, and how AI, and myself caught it:**  
+Claude claimed China's past rebounds were powered by a young workforce. ChatGPT corrected it: the 2008 rebound ran on stimulus, bank lending and infrastructure, and the working-age population was already shrinking by 2012. I found supporting documentation to back it. Claude also called the 851 million figure China's "labor force". I corrected that to "working-age population (16–59)" and checked it against the National Bureau of Statistics. 
+
+**My verification / decisions:**  
+I chose the recovery comparison because it interested me more; I separated the year-one hit from the years 2–5 recovery; I chose to write for the U.S.; I ruled out supply-chain reshoring because cutting supply chains hurts long term; I chose the AI-chip export-control route
+
+**What I learned:**  
+After rethinking my approach to the hypothesis I realized the post war direction was a great way to learn about China and the U.S. economy, keep my topic close to my profession, and drill down into some numbers. I am still able to use China's aging population and declined fertility rate in my numbers by using the data to support my hypothesis
+
+## 2026-10-02 — Research Paper: Reconciling Two Hypotheses and Reading Feedback
+
+**AI tool:** Claude (Anthropic)
+
+**Task:**  
+Picked the work back up after a break, confirmed which hypothesis is current, and read the instructor's two unread feedback files.
+
+**AI contribution:**  
+Claude summarized the earlier sessions. It initially missed the 2026-09-28 work and coached me through a different hypothesis (defense spending held at 1.7% of GDP through 2035). Once the earlier session was re-read, Claude laid the two hypotheses side by side and recommended keeping the Sept 28 version, using the pension figures as supporting evidence. It read both review files (`review/2026-09-21` and `review/2026-09-24`). Both cover Stage 1 only. It pulled out what they imply for the research brief: commit the falsifier before the analysis, scope claims precisely, and keep logging as I go. It also drafted these log entries for my review.
+
+**My verification / decisions:**  
+I noticed the mismatch ("I thought we locked this hypothesis in"); I confirmed the Taiwan-recovery hypothesis; I decided Adam's review branches stay off main
+
+**What I learned:**  
+I can't work on this project and step away for several days. I spent about 2 hours relearning and familiarizing myself with all of the info I had already spent days scrubbing and finalizing. 
+
 ## Reflection — Perfect Competition engagement
 
 AI assisted me with a lot of the economics in this project. It helped to simplify a lot of the complexities that are unfamiliar to me and help explain why tomatoes stop at 10 beds using P=MC, why carrots and mesclun are binding while total beds/temporary labor is slack, why tomato MC dips around bed 6, and several other economic facts within the Perfect Competition work. I had to correct AI a few times regarding my repo in GitHub, there had been work that I thought was committed to main that wasn't and I mistakenly trusted AI, but when I went back the next day I realized I had to reengage AI to commit. I also had to remind AI to reference the 1.3 instructions web page and would feed it the info multiple times to ensure nothing was missed and usually it would find one or two requirements we missed or misinterpreted. I learned that AI is incredibly powerful, to a scary degree, but it’s here and we must learn AI because AI is learning us….very, very, fast. I also learned a lot about economics, for instance my hypothesis was to fill the beds to the maximum capacity. I understood this was risky and I had no factual numbers to back this up. In my reality that would be the mistake a lot of first-time business owners make when starting up. They purchase products or provide a service that is not producing enough revenue to cover the cost of producing the product/service itself (employees, bldg space, supplies, etc.) and therefore are not able to build their profit. This project opened my eyes to marginal cost and how it can help businesses to understand their financial position and potentially look at different options to help maximize profit.
