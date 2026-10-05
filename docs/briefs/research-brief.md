@@ -71,7 +71,7 @@ Office of the Director of National Intelligence. (2026). *Annual threat assessme
 
 Social Security and Medicare Boards of Trustees. (2025). *A summary of the 2025 annual Social Security and Medicare trust fund reports*. Social Security Administration. https://www.ssa.gov/oact/TRSUM/
 
-Social Security Laboratory, Chinese Academy of Social Sciences. (2019, April). *China pension actuarial report 2019–2050* [Report summary].
+Social Security Laboratory, Chinese Academy of Social Sciences. (2019, April). *China pension actuarial report 2019–2050* [Report summary]. http://cisscass.com/yanjiucginfo.aspx?ids=26&fl=3
 
 Taiwan Affairs Office of the State Council & State Council Information Office of the People's Republic of China. (2022, August 10). *The Taiwan question and China's reunification in the new era*. http://english.scio.gov.cn/whitepapers/2022-08/10/content_78365819.htm
 
