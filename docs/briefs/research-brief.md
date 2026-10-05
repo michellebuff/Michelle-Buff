@@ -45,7 +45,7 @@ I will use two charts: each country's baseline GDP path and clearly labeled scen
 Agee, R. (2025, October 2). *China's closing window: Strategic compression and the risk of crisis*. Foreign Policy Research Institute. https://www.fpri.org/article/2025/10/chinas-closing-window-strategic-compression-and-the-risk-of-crisis/
 
 
-Bonthuis, B., Cao, Y., & Freudenberg, C. (2026). *Population aging and pension reforms in China* (IMF Working Paper No. WP/26/27). International Monetary Fund.
+Bonthuis, B., Cao, Y., & Freudenberg, C. (2026). *Population aging and pension reforms in China* (IMF Working Paper No. WP/26/27). International Monetary Fund. https://www.imf.org/en/publications/wp/issues/2026/02/19/population-aging-and-pension-reforms-in-china-574061
 
 Brands, H., & Beckley, M. (2022). *Danger zone: The coming conflict with China*. W. W. Norton.
 
