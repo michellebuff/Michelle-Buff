@@ -13,6 +13,8 @@ built_with: "Claude Code, from this file"
 
 This model will show how the U.S. and China's GDP gap versus each country's no-war path will be impacted in post-war years 2–5, and whether the U.S. will recover faster than China, as predicted in my hypothesis (docs/briefs/research-brief.md).
 
+Decision-maker: the U.S. Department of Commerce, Bureau of Industry and Security (BIS). The decision in front of BIS is whether to extend export controls beyond frontier AI chips to the industrial AI chips that run factory automation. The model informs that decision by testing whether China's aging alone can be expected to slow its recovery relative to the U.S.
+
 The model is a scenario, not a forecast. Published estimates cover only the year-one hit (Welch et al., 2024), so years 2–5 are built from cited evidence on how stimulus and labor supply shape recovery.
 
 ## Inputs — the named contract

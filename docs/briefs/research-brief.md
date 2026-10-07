@@ -10,6 +10,8 @@ A cross-strait conflict has been a concern for decades (Curtis, 2025). Some anal
 
 If a conflict occurred and the United States became involved (as in the war scenario modeled by Welch et al., 2024), what would the economic costs be for both countries, and how would each recover during years 2–5 after the initial shock?
 
+I am writing this report for the U.S. Department of Commerce, specifically the Bureau of Industry and Security, to prepare for the outcome of a potential Taiwan conflict and how it could impact the U.S. economy. A conflict will impact the economy, but it will also impact the U.S. tech industry directly and indirectly, and we should be prepared for it. The decision in front of BIS is whether to extend export controls beyond frontier AI chips to the industrial AI chips that run factory automation.
+
 ## Hypothesis
 
 My hypothesis: following a Taiwan-conflict shock, China would remain further below its own no-conflict GDP path in years 2–5 than the United States would relative to its own baseline — a recovery-speed gap distinct from, and not explained by, any difference in the size of the initial year-one hit.
