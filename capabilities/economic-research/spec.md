@@ -94,6 +94,21 @@ Scenario GDP: `SCEN_t = BASE_t × (1 + GAP_t / 100)`
 6. Sensitivity reports the break-even aging penalty for China at which the two countries tie.
 7. Sensitivity shows the 2015–2025 labor-factor result next to the main result.
 
+## What Would Flip the Verdict
+
+The verdict comes from comparing two cited aging penalties, so the test is whether those citations clear the break-even values. With base recovery at 0, the size of each country's hit cancels out. The two countries tie when (1 − `CHN_AGING_PENALTY`) × `CHN_LABOR_FACTOR` = (1 − `US_AGING_PENALTY`) × `US_LABOR_FACTOR`. The Sensitivity sheet calculates each break-even below.
+
+| Penalty | Locked value | Flips the verdict at | Source for the locked value | Distance |
+|---|---:|---:|---|---:|
+| China | 0.30 | 0.361 or higher (U.S. held at 0.38) | Chen et al. (2025): monetary stimulus output effect "30%+" smaller | +6.1 points |
+| U.S. | 0.38 | 0.321 or lower (China held at 0.30) | Basso & Rachedi (2021): spending multiplier 38% smaller | −5.9 points |
+
+Honda and Miyamoto (2020) find that the output effects of government spending weaken as populations age, and that high-debt aging economies face even weaker multipliers. Their abstract reports the direction, not a size, so it supports applying a penalty to both countries but cannot set either value. Chen et al. give a lower bound ("30%+"), so a China penalty above 0.361 is not ruled out by the source; the model uses the stated figure rather than choosing a higher one after seeing the result.
+
+## Export Controls and Trade
+
+The model measures only the aging channel (stimulus effectiveness and labor supply). Export controls and trade restrictions are not in the numbers, so the recovery gap the model reports carries no export-control effect. The paper discusses that channel as written argument and does not attribute any part of the modeled gap to it. Giving it a number would need a cited estimate of how export controls change each country's recovery in years 2–5; none was found, and choosing one after seeing the result would repeat the tuning problem the Process Note describes.
+
 ## Known Limitations
 
 - The aging penalties measure different things: China's is monetary stimulus (Chen et al., 2025), the U.S. one is fiscal spending (Basso & Rachedi, 2021). The Sensitivity sheet shows how the result changes if either is dropped.

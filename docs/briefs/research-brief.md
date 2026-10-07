@@ -2,7 +2,7 @@
 
 ## The Challenge
 
-China's shrinking, aging working-age population—851 million people aged 16–59, according to China's National Bureau of Statistics (2026)—could make state-directed stimulus less effective (Chen et al., 2025). That stimulus supported China's 2008 recovery (Yueh, 2010), while its post-COVID rebound also reflected reopened services and stronger consumption (International Monetary Fund [IMF], 2024). The question is not whether Beijing can still spend, but whether each yuan of credit restores less output as workers become scarcer (Chen et al., 2025) and pension obligations compete for fiscal room (Bonthuis et al., 2026).
+China's shrinking, aging working-age population—980 million people aged 15–64 in 2025, down 8.2 million since 2015 (World Bank, n.d.)—could make state-directed stimulus less effective (Chen et al., 2025). That stimulus supported China's 2008 recovery (Yueh, 2010), while its post-COVID rebound also reflected reopened services and stronger consumption (International Monetary Fund [IMF], 2024). The question is not whether Beijing can still spend, but whether each yuan of credit restores less output as workers become scarcer (Chen et al., 2025) and pension obligations compete for fiscal room (Bonthuis et al., 2026).
 
 Beijing claims Taiwan as part of China, opposes Taiwanese independence, and says it prefers peaceful unification while keeping the option of force open (Office of the Director of National Intelligence [ODNI], 2026; Taiwan Affairs Office & State Council Information Office, 2022). Taiwan is self-governing, and the People's Republic of China has never governed it (Curtis, 2025).
 
@@ -32,7 +32,7 @@ My hypothesis: following a Taiwan-conflict shock, China would remain further bel
 
 ## Planned Analysis
 
-I will use the IMF April 2026 WEO baseline (IMF, 2026), Bloomberg Economics' 2024 conflict scenarios (Welch et al., 2024), World Bank and NBS workforce data (World Bank, n.d.; National Bureau of Statistics of China, 2026), the stimulus studies (Chen et al., 2025; Honda & Miyamoto, 2020), CASS/IMF/SSA/CBO pension and fiscal data (Social Security Laboratory, Chinese Academy of Social Sciences, 2019; Bonthuis et al., 2026; Social Security and Medicare Boards of Trustees, 2025; Congressional Budget Office, 2026), and State Department/Curtis trade-control sources (U.S. Department of State, 2022; Curtis, 2025).
+I will use the IMF April 2026 WEO baseline (IMF, 2026), Bloomberg Economics' 2024 conflict scenarios (Welch et al., 2024), World Bank workforce data, ages 15–64 for both countries (World Bank, n.d.), the stimulus studies (Chen et al., 2025; Honda & Miyamoto, 2020), CASS/IMF/SSA/CBO pension and fiscal data (Social Security Laboratory, Chinese Academy of Social Sciences, 2019; Bonthuis et al., 2026; Social Security and Medicare Boards of Trustees, 2025; Congressional Budget Office, 2026), and State Department/Curtis trade-control sources (U.S. Department of State, 2022; Curtis, 2025).
 
 Because the conflict estimates cover year one, I will treat years 2–5 as a scenario, starting from the initial hit and reasoning through stimulus, labor, pension, fiscal, and trade effects against each IMF baseline.
 
@@ -64,8 +64,6 @@ International Monetary Fund. (2026, April). *World economic outlook: Global econ
 LaGrone, S. (2021, June 23). Milley: China wants capability to take Taiwan by 2027, sees no near-term intent to invade. *USNI News*. https://news.usni.org/2021/06/23/milley-china-wants-capability-to-take-taiwan-by-2027-sees-no-near-term-intent-to-invade
 
 Liang, X. (2026, April). U.S. intelligence: China not on Taiwan timeline. *Arms Control Today*. https://www.armscontrol.org/act/2026-04/news-briefs/us-intelligence-china-not-taiwan-timeline
-
-National Bureau of Statistics of China. (2026, February 28). *Statistical communiqué of the People's Republic of China on the 2025 national economic and social development*. https://www.stats.gov.cn/english/PressRelease/202602/t20260228_1962661.html
 
 Office of the Director of National Intelligence. (2026). *Annual threat assessment of the U.S. intelligence community*. https://www.intelligence.senate.gov/wp-content/uploads/2026/03/ATA-2026-unclassified-16-Mar-FINAL.pdf
 
