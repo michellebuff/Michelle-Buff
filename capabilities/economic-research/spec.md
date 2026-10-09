@@ -28,7 +28,7 @@ The model is a scenario, not a forecast. Published estimates cover only the year
 | `US_SHOCK_Y1` | −6.7 | % below baseline in year one | Welch et al. (2024), same scenario |
 | `BASE_RECOVERY_RATE` | 0 | share of remaining gap closed per year without stimulus | Wars: no recovery after a decade (Benmelech & Monteiro, 2026); banking crises: no rebound to trend (Abiad et al., 2009) |
 | `STIM_PER_10PTS` | 5 | % of GDP of stimulus per 10 points of year-one loss | Assumption; tested 0–10 in Sensitivity |
-| `FISCAL_EFFECT` | 1.5 | points of loss avoided per 1% of GDP of stimulus | Abiad et al. (2009) — verify against the PDF before final |
+| `FISCAL_EFFECT` | 1.5 | points of loss avoided per 1% of GDP of stimulus | Abiad et al. (2009), p. 23, fn. 22: about 1.5 points smaller medium-run (seven-year) loss per 1% of GDP of extra government consumption; banking crises; an association, not a causal estimate. Verified against the PDF 2026-10-08 |
 | `CHN_AGING_PENALTY` | 0.30 | decimal | Chen et al. (2025): monetary stimulus output effect 30%+ smaller in aging China |
 | `US_AGING_PENALTY` | 0.38 | decimal | Basso & Rachedi (2021): U.S. aging cut the spending multiplier 38% (1980–2015) |
 | `CHN_WAP_2027` / `CHN_WAP_2031` | 983.812239 / 958.656955 | million, ages 15–64 (projected) | World Bank, Population estimates and projections (2026) |
