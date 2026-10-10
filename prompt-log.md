@@ -313,6 +313,25 @@ I noticed the mismatch ("I thought we locked this hypothesis in"); I confirmed t
 **What I learned:**  
 I can't work on this project and step away for several days. I spent about 2 hours relearning and familiarizing myself with all of the info I had already spent days scrubbing and finalizing. 
 
+## 2026-10-04 to 2026-10-09 — Research Paper: Brief, Model, Analysis, Feedback, and Final Draft
+
+**AI tool:** Claude (Anthropic)
+
+**Task:**  
+Finalized the research brief, locked the model spec, built and ran the model, made two charts, wrote the six analysis sections, answered two rounds of Adam's feedback, and assembled the final paper for BIS.
+
+**AI contribution:**  
+Claude pulled IMF and World Bank data, built the Excel model and charts from the locked spec, and computed the flip points. I wrote each analysis section myself; Claude edited the wording to sound more like economics writing and added the APA 7 references. It also assembled the draft and produced the Word and PDF copies.
+
+**Where the AI was wrong, and how it was caught:**  
+A few test runs of the model happened before the spec was locked; the spec's Process Note says so. A commit Claude labeled "not for main yet" ended up on main; I asked about it and it was explained and finished in the next commit.
+
+**My verification / decisions:**  
+I chose BIS as the reader and the industrial AI chip decision. I kept the falsified result instead of changing inputs, and I flagged that China's 30% penalty comes from monetary, not fiscal, research. I uploaded the Abiad et al. (2009) PDF so the 1.5 figure could be checked against page 23. I chose the targeted export-control recommendation.
+
+**What I learned:**  
+I predicted the U.S. would recover more, the falsifier triggered, and an aging workforce is only the tip of the iceberg among the many factors that shape recovery.
+
 ## Reflection — Perfect Competition engagement
 
 AI assisted me with a lot of the economics in this project. It helped to simplify a lot of the complexities that are unfamiliar to me and help explain why tomatoes stop at 10 beds using P=MC, why carrots and mesclun are binding while total beds/temporary labor is slack, why tomato MC dips around bed 6, and several other economic facts within the Perfect Competition work. I had to correct AI a few times regarding my repo in GitHub, there had been work that I thought was committed to main that wasn't and I mistakenly trusted AI, but when I went back the next day I realized I had to reengage AI to commit. I also had to remind AI to reference the 1.3 instructions web page and would feed it the info multiple times to ensure nothing was missed and usually it would find one or two requirements we missed or misinterpreted. I learned that AI is incredibly powerful, to a scary degree, but it’s here and we must learn AI because AI is learning us….very, very, fast. I also learned a lot about economics, for instance my hypothesis was to fill the beds to the maximum capacity. I understood this was risky and I had no factual numbers to back this up. In my reality that would be the mistake a lot of first-time business owners make when starting up. They purchase products or provide a service that is not producing enough revenue to cover the cost of producing the product/service itself (employees, bldg space, supplies, etc.) and therefore are not able to build their profit. This project opened my eyes to marginal cost and how it can help businesses to understand their financial position and potentially look at different options to help maximize profit.
